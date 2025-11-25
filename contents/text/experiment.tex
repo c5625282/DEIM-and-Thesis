@@ -20,14 +20,39 @@ wineでは，全欠損率で提案手法が最小誤差となり，優位性が�
 
 diabetesでは欠損率0.1の際にmissForestが優れたが，0.3と0.5では提案手法が最小誤差を示し，中程度の相関を持つデータに対しても有効性を確認できた．
 
-% \begin{table}[h]
-%     \centering
-%     \caption{提案法(RF-Ens)と既存補完手法の精度比較}
-%     \begin{|c|c|c|c|c|c|}
-%     \hline
-%     data set \multicolumn{1}{c|}{missing rate} & \multicolumn{1}{c|}{mean} & \multicolumn{1}{c|}{kNN(k=5)} & \multicolumn{1}{c|}{missForest} & \multicolumn{1}{c|}{RF-Ens (提案)} & \multicolumn{1}{c|}{RF-Ens (proposed)} \\ \hline \hline
 
-%     \end{|c|c|c|c|c|}    
+% \begin{table}[h]
+% \centering
+% \footnotesize
+% \caption{提案法（RF-Ens）と既存補完手法の精度比較}
+% \label{tab:comparison}
+
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% \makecell{data\\set} & \makecell{missing\\rate} 
+%     & mean & kNN($k{=}5$) & missForest & \makecell{RF-Ens \\ (proposed)} \\
+% \hline
+
+% \multirow{3}{*}{iris}
+%  & 0.1 & 1.022(0.017) & 0.261(0.012) & \cellcolor{gray!50}0.235(0.014) & 0.243(0.010) \\
+%  & 0.3 & 1.018(0.008) & 0.430(0.011) & \cellcolor{gray!50}0.365(0.014) & 0.369(0.010) \\
+%  & 0.5 & 1.023(0.001) & \cellcolor{gray!50}0.545(0.009) & 0.609(0.016) & 0.548(0.012) \\
+% \hline
+
+% \multirow{3}{*}{wine}
+%  & 0.1 & 1.003(0.013) & 0.528(0.011) & 0.491(0.010) & \cellcolor{gray!50}0.488(0.010) \\
+%  & 0.3 & 1.014(0.007) & 0.634(0.006) & 0.591(0.006) & \cellcolor{gray!50}0.583(0.006) \\
+%  & 0.5 & 1.021(0.004) & 0.812(0.005) & 0.786(0.009) & \cellcolor{gray!50}0.726(0.005) \\
+% \hline
+
+% \multirow{3}{*}{diabetes}
+%  & 0.1 & 1.016(0.010) & 0.643(0.007) & \cellcolor{gray!50}0.510(0.006) & 0.518(0.006) \\
+%  & 0.3 & 1.010(0.004) & 0.834(0.004) & 0.649(0.005) & \cellcolor{gray!50}0.632(0.004) \\
+%  & 0.5 & 1.008(0.003) & 1.007(0.003) & 0.855(0.005) & \cellcolor{gray!50}0.779(0.004) \\
+% \hline
+% \end{tabular}
+
+% \end{table}
 
 \begin{table}[h]
 \centering
@@ -35,33 +60,34 @@ diabetesでは欠損率0.1の際にmissForestが優れたが，0.3と0.5では�
 \caption{提案法（RF-Ens）と既存補完手法の精度比較}
 \label{tab:comparison}
 
-\begin{tabularx}{0.98\linewidth}{|c|c|c|c|c|c|}
-\toprule
-\makecell{data\\set} & \makecell{missing\\rate} 
-    & mean & kNN($k{=}5$) & missForest & RF-Ens \\
-\midrule
+\resizebox{0.97\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\makecell{data\\set} & \makecell{missing\\rate}
+    & mean & kNN($k{=}5$) & missForest & \makecell{RF-Ens\\(proposed)} \\
+\hline
 
 \multirow{3}{*}{iris}
- & 0.1 & 1.022(0.017) & 0.261(0.012) & 0.235(0.014) & 0.243(0.010) \\
- & 0.3 & 1.018(0.008) & 0.430(0.011) & 0.365(0.014) & 0.369(0.010) \\
- & 0.5 & 1.023(0.001) & 0.545(0.009) & 0.609(0.016) & 0.548(0.012) \\
-\midrule
+ & 0.1 & 1.022(0.017) & 0.261(0.012) & \cellcolor{gray!50}0.235(0.014) & 0.243(0.010) \\
+ & 0.3 & 1.018(0.008) & 0.430(0.011) & \cellcolor{gray!50}0.365(0.014) & 0.369(0.010) \\
+ & 0.5 & 1.023(0.001) & \cellcolor{gray!50}0.545(0.009) & 0.609(0.016) & 0.548(0.012) \\
+\hline
 
 \multirow{3}{*}{wine}
- & 0.1 & 1.003(0.013) & 0.528(0.011) & 0.491(0.010) & 0.488(0.010) \\
- & 0.3 & 1.014(0.007) & 0.634(0.006) & 0.591(0.006) & 0.583(0.006) \\
- & 0.5 & 1.021(0.004) & 0.812(0.005) & 0.786(0.009) & 0.726(0.005) \\
-\midrule
+ & 0.1 & 1.003(0.013) & 0.528(0.011) & 0.491(0.010) & \cellcolor{gray!50}0.488(0.010) \\
+ & 0.3 & 1.014(0.007) & 0.634(0.006) & 0.591(0.006) & \cellcolor{gray!50}0.583(0.006) \\
+ & 0.5 & 1.021(0.004) & 0.812(0.005) & 0.786(0.009) & \cellcolor{gray!50}0.726(0.005) \\
+\hline
 
 \multirow{3}{*}{diabetes}
- & 0.1 & 1.016(0.010) & 0.643(0.007) & 0.510(0.006) & 0.518(0.006) \\
- & 0.3 & 1.010(0.004) & 0.834(0.004) & 0.649(0.005) & 0.632(0.004) \\
- & 0.5 & 1.008(0.003) & 1.007(0.003) & 0.855(0.005) & 0.779(0.004) \\
-\bottomrule
-\end{tabularx}
+ & 0.1 & 1.016(0.010) & 0.643(0.007) & \cellcolor{gray!50}0.510(0.006) & 0.518(0.006) \\
+ & 0.3 & 1.010(0.004) & 0.834(0.004) & 0.649(0.005) & \cellcolor{gray!50}0.632(0.004) \\
+ & 0.5 & 1.008(0.003) & 1.007(0.003) & 0.855(0.005) & \cellcolor{gray!50}0.779(0.004) \\
+\hline
+\end{tabular}%
+} % end of resizebox
 
 \end{table}
-
 
 
 

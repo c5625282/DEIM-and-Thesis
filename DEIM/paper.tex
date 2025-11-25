@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{color}
 \usepackage{colortbl}
+\usepackage[table]{xcolor}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{bm}
@@ -12,6 +13,8 @@
 \usepackage[switch]{lineno}
 \usepackage{tabularx}
 \usepackage{makecell}
+\usepackage{arydshln}  % 点線（dashed line）用
+
 
 % 印刷位置調整 %
 % 必要に応じて値を変更してください．
@@ -28,13 +31,13 @@
 
 \jtitle{アンサンブル学習に基づいた欠損値補完について}
 \authorlist{%
- \authorentry[hanako@design.inf.shizuoka.ac.jp]{高良 流平}{Ryuhei Kora}{ShizuokaUniv}%
- \authorentry[yamamoto@design.inf.shizuoka.ac.jp]{齊藤 史哲}{Fumitoshi Saito}{ShizuokaUniv}%
+ \authorentry[c5625282@aoyama,jp]{高良 流平}{Ryuhei Kora}{AogakuUniv}%
+ \authorentry[yamamoto@design.inf.shizuoka.ac.jp]{齊藤 史哲}{Fumiaki Saito}{AogakuUniv}%
 }
-\affiliate[ShizuokaUniv]{静岡大学情報学部\hskip1zw
-  〒432--8011 静岡県浜松市中区城北3-5-1}
- {Faculty of Informatics, Shizuoka University\\
-  3--5--1, Johoku, Naka-ku, Hamamatsu, Shizuoka,432--8011, Japan}
+\affiliate[AogakuUniv]{青山学院大学理工学研究科\hskip1zw
+  〒155--8366 東京都渋谷区渋谷4-4-25}
+ {Faculty of Informatics, Aoyamagakuin University\\
+  4--4--25, Shibuya, Shibuya-ku, Tokyo, 155--8366, Japan}
 
 \begin{document}
 \linenumbers %このオプションは投稿時には無効にすること
@@ -94,11 +97,9 @@
 \vspace{2em}
 
 \begin{thebibliography}{99}
-\bibitem{Codd1970}
-  E. F. Codd,
-  ``A Relational Model of Data for Large Shared Data Banks,''
-  Communications of the {ACM} (CACM), Vol. 13, No. 6, pp. 377--387, 1970.
-
+\bibitem{textbook}
+  高橋 将宣，渡辺 美智子，欠測データ処理 Rによる単一代入法と多重代入法，共立出版，(2017).
+\bibitem{MissForest}
   Stekhoven, D. J. and Buhlmann, P., MissForest: non-parametric missing value imputation for mixed-type data, Bioinformatics, Vol. 28, No. 1, pp. 112-118 (2012). 
 \end{thebibliography}
 
