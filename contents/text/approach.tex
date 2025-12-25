@@ -75,14 +75,49 @@ $\mathcal{F}_s^{(m)}$ と表す．
 
 \subsubsection{Permutation Importance に基づく選択（PERM）}
 Permutation Importance（PI）は，
-学習済みモデルにおいて各特徴量の値をランダムに入れ替えた際の
-予測性能の低下量に基づいて重要度を評価する指標である．
-本研究では，補完対象 $X_s$ を目的変数として
+学習済みモデルを固定したまま，
+各特徴量の値をサンプル間でランダムに入れ替えた際の
+予測性能の低下量に基づいて
+特徴量の重要度を評価する指標である．
+重要な特徴量ほど，
+当該特徴量の入れ替えによって
+予測性能が大きく劣化する．
+
+図Xに，PI の概念を示す．
+まず，元の入力データを用いて
+学習済みモデルによる予測性能を算出する．
+次に，対象となる特徴量の列のみを
+サンプル間でランダムにシャッフルし，
+他の特徴量およびモデルは固定したまま
+再度予測性能を算出する．
+このときの性能低下量 $\Delta$ を，
+当該特徴量の重要度として用いる．
+
+本研究では，
+補完対象 $X_s$ を目的変数として
 ランダムフォレストを学習し，
 各説明変数候補に対する PI を算出する．
 得られた重要度に基づき，
 上位の特徴量からなる部分集合
 $\mathcal{F}_s^{(\mathrm{PERM})}$ を構築する．
+
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[width=6.5cm, clip]{../contents/figure/perm.PNG}
+\caption{Permutation Importanceの概念}
+% \label{fig:example}
+\end{center}
+\end{figure}
+
+% Permutation Importance（PI）は，
+% 学習済みモデルにおいて各特徴量の値をランダムに入れ替えた際の
+% 予測性能の低下量に基づいて重要度を評価する指標である．
+% 本研究では，補完対象 $X_s$ を目的変数として
+% ランダムフォレストを学習し，
+% 各説明変数候補に対する PI を算出する．
+% 得られた重要度に基づき，
+% 上位の特徴量からなる部分集合
+% $\mathcal{F}_s^{(\mathrm{PERM})}$ を構築する．
 
 \subsubsection{Mean Decrease Impurity に基づく選択（MDI）}
 Mean Decrease Impurity（MDI）は，
